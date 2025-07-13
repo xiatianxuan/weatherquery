@@ -4,9 +4,9 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "fexcode", email = "14356165+fexcode@user.noreply.gitee.com" }
+    { name = "fexcode", email = "2734664632@qq.com" }
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = []
 
 [build-system]
