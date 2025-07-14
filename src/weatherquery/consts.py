@@ -1,6 +1,8 @@
+import importlib
+
 GLOBAL_DEBUG = True  # 全局调试标志
 PRINT_TIME = True if GLOBAL_DEBUG else False  # 函数运行耗时 是否输出
-CITIES_FILE_PATH = "src/weatherquery/assets/citycodes.json"
+CITIES_FILE_PATH  = importlib.resources.files("weatherquery.assets").joinpath("citycodes.json")
 
 
 class Logger:
