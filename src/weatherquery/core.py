@@ -90,6 +90,10 @@ class Querier:
         )
 
     @property
+    def today(self):
+        return self.forecast[0]
+
+    @property
     def yesterday(self):
         return DayWeather(
             date=self._data_data["yesterday"]["date"],
