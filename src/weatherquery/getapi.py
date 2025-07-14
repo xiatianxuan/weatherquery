@@ -96,4 +96,4 @@ class GetApi:
 
 
 if __name__ == "__main__":
-    print(get_api_by_citycode("101010100"))
+    print(GetApi.get_api_by_citycode("101010100"))
