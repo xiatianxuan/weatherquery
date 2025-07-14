@@ -69,8 +69,7 @@ class Querier:
 
     @property
     def forecast(self):
-        return (
-            [
+        return [
                 DayWeather(
                     date=day["date"],
                     high=day["high"],
@@ -86,8 +85,8 @@ class Querier:
                     notice=day["notice"],
                 )
                 for day in self._data_data["forecast"]
-            ],
-        )
+            ]
+        
 
     @property
     def today(self):
