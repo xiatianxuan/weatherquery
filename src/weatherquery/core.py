@@ -47,7 +47,7 @@ class MainData:
 class Querier:
     def __init__(self, city_name):
         self._data = GetApi.get_city_weather_dict(city_name=city_name)
-        self._data_data=self._data["data"]
+        self._data_data = self._data["data"]
         self._main_data = MainData(cityInfo=self.cityInfo, data=self.weatherData)
 
     @property
