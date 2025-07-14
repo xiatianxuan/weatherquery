@@ -1,6 +1,6 @@
 [project]
 name = "weatherquery"
-version = "1.0.0"
+version = "0.1.0"
 description = "这是一个轻量级的快捷的天气查询Python库"
 readme = "README.md"
 authors = [
@@ -13,3 +13,6 @@ dependencies = []
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["src/weatherquery/assets/**"]
