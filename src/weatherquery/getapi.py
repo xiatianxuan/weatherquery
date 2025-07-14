@@ -43,7 +43,7 @@ class GetApi:
         根据城市名获取城市编码
         """
         with open(consts.CITIES_FILE_PATH) as f:
-            city_code = [i for i in json.load(f) if i["city_name"] == name][0][
+            city_code = [i for i in json.load(f) if GetApi._is_the_same_city(name,i["city_name"])][0][
                 "city_code"
             ]
         return city_code
@@ -54,6 +54,29 @@ class GetApi:
         code = GetApi.get_citycode_from_cityname(city_name)
         return GetApi.get_api_by_citycode(code)
     
+    @staticmethod
+    def _is_the_same_city(user_cityname:str,file_cityname:str):
+        """
+        比较两个城市是否为同一城市
+        Args: 
+        user_cityname: 用户指定的城市
+        file_cityname: 文件里存储的城市
+
+        此函数为了确保 (芜湖市 芜湖) (安徽省 安徽) 之类的城市可以被识别成同一个
+        """
+        uc=user_cityname
+
+        ignore_list=['省','市','区','县',"村","乡","旗","自治区","直辖市","特别行政区"]
+        for ig in ignore_list:
+            # 去掉结尾的行政区级别
+            if uc.endswith(ig):
+                uc=uc[:-len(ig)]
+                break
+        
+        return file_cityname.startswith(uc)
+
+        
+
 
 
 
