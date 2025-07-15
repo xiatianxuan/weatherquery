@@ -1,4 +1,3 @@
-from .assets import emm
 from .getapi import GetApi
 from .core import Querier
 from .consts import LOGGER

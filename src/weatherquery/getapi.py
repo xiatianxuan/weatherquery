@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from . import consts
 import urllib.request
-import json
 from .utils import *
+from .name2code import name2code
+import json
 
 
 class GetApi:
@@ -42,20 +43,18 @@ class GetApi:
         """
         根据城市名获取城市编码
         """
-        with open(consts.CITIES_FILE_PATH, 'r', encoding = 'utf-8') as f:
-            possibable_cities = [
-                i
-                for i in json.load(f)
-                if GetApi._is_the_same_city(name, i["city_name"])
-            ]
-            if len(possibable_cities) == 0:
-                raise ValueError(f"City {name} not found!")
-            citycode = possibable_cities[0]["city_code"]
-            if not citycode:
-                # citycode可能为空
-                raise ValueError(
-                    "抱歉，没有找到这个地区的城市编码，试试使用更精确的地址呢？（如果你给的城市名是省级行政区，请精确到某个市级行政区）"
-                )
+
+        possibable_cities = [
+            i for i in name2code if GetApi._is_the_same_city(name, i["city_name"])
+        ]
+        if len(possibable_cities) == 0:
+            raise ValueError(f"City {name} not found!")
+        citycode = possibable_cities[0]["city_code"]
+        if not citycode:
+            # citycode可能为空
+            raise ValueError(
+                "抱歉，没有找到这个地区的城市编码，试试使用更精确的地址呢？（如果你给的城市名是省级行政区，请精确到某个市级行政区）"
+            )
 
         return citycode
 

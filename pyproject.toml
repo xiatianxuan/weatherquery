@@ -1,6 +1,6 @@
 [project]
 name = "weatherquery"
-version = "v0.1.0"
+version = "0.1.2"
 description = "这是一个轻量级的快捷的天气查询Python库"
 readme = "README.md"
 authors = [
@@ -17,5 +17,4 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["weatherquery"]
 include-package-data = true
-package-dir = {"weatherquery" = "src/weatherquery"}
-package-data = { "weatherquery" = ["assets/*"] }
+package-dir = {"" = "src"}
