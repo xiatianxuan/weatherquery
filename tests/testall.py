@@ -2,7 +2,7 @@ import os
 
 if "tests" in os.getcwd():
     os.chdir("..")
-    __import__("sys").path.append("../src")
+    __import__("sys").path.append("./src")
 else:
     __import__("sys").path.append("./src")
 import unittest
