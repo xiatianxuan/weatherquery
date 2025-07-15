@@ -2,8 +2,6 @@ from .getapi import GetApi
 from .core import Querier
 from .consts import LOGGER
 
-assert emm == 0, "assets没有被正确安装"
-
 def debug():
     """
     本函数用于调试 core.py 中 Querier 类的功能
