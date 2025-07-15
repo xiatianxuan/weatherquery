@@ -1,3 +1,8 @@
+from .assets import emm
+
+assert emm==0, "assets没有被正确安装"
+
+
 from .getapi import GetApi
 from .core import *
 from .consts import LOGGER
