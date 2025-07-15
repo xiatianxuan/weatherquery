@@ -14,5 +14,4 @@ class Logger:
     def debug(self, text: str):
         self.log(text, "DEBUG")
 
-
 LOGGER = Logger(GLOBAL_DEBUG)
