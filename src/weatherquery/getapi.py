@@ -4,6 +4,7 @@ import urllib.request
 from .utils import *
 from .name2code import name2code
 import json
+from functools import lru_cache
 
 
 class GetApi:
@@ -11,6 +12,7 @@ class GetApi:
     api请求工具包
     """
 
+    @lru_cache(maxsize=16)
     @staticmethod
     @get_time
     def get_api_by_citycode(city_code: str) -> dict:
@@ -58,12 +60,14 @@ class GetApi:
 
         return citycode
 
+
     @staticmethod
     @get_time
     def get_city_weather_dict(city_name: str) -> dict:
         code = GetApi.get_citycode_from_cityname(city_name)
         return GetApi.get_api_by_citycode(code)
 
+    @lru_cache(maxsize=16)
     @staticmethod
     def _is_the_same_city(user_cityname: str, file_cityname: str, debug: bool = False):
         """
