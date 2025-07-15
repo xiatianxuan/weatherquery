@@ -42,7 +42,7 @@ class GetApi:
         """
         根据城市名获取城市编码
         """
-        with open(consts.CITIES_FILE_PATH) as f:
+        with open(consts.CITIES_FILE_PATH, 'r', encoding = 'utf-8') as f:
             possibable_cities = [
                 i
                 for i in json.load(f)
