@@ -17,5 +17,5 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["weatherquery"]
 include-package-data = true
-package-dir = {"" = "src"}
+package-dir = {"weatherquery" = "src/weatherquery"}
 package-data = { "weatherquery" = ["assets/*"] }
