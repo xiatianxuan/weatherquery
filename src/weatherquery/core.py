@@ -68,28 +68,27 @@ class Querier:
         )
 
     @property
-    def forecast(self):
+    def forecast(self) -> list[DayWeather]:
         return [
-                DayWeather(
-                    date=day["date"],
-                    high=day["high"],
-                    low=day["low"],
-                    ymd=day["ymd"],
-                    week=day["week"],
-                    sunrise=day["sunrise"],
-                    sunset=day["sunset"],
-                    aqi=day["aqi"],
-                    fx=day["fx"],
-                    fl=day["fl"],
-                    wtype=day["type"],  # 把 "type" 映射到 "wtype"
-                    notice=day["notice"],
-                )
-                for day in self._data_data["forecast"]
-            ]
-        
+            DayWeather(
+                date=day["date"],
+                high=day["high"],
+                low=day["low"],
+                ymd=day["ymd"],
+                week=day["week"],
+                sunrise=day["sunrise"],
+                sunset=day["sunset"],
+                aqi=day["aqi"],
+                fx=day["fx"],
+                fl=day["fl"],
+                wtype=day["type"],  # 把 "type" 映射到 "wtype"
+                notice=day["notice"],
+            )
+            for day in self._data_data["forecast"]
+        ]
 
     @property
-    def today(self):
+    def today(self) -> DayWeather:
         return self.forecast[0]
 
     @property

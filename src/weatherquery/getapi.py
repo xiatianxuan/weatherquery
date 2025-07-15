@@ -43,12 +43,21 @@ class GetApi:
         根据城市名获取城市编码
         """
         with open(consts.CITIES_FILE_PATH) as f:
-            city_code = [
+            possibable_cities = [
                 i
                 for i in json.load(f)
                 if GetApi._is_the_same_city(name, i["city_name"])
-            ][0]["city_code"]
-        return city_code
+            ]
+            if len(possibable_cities) == 0:
+                raise ValueError(f"City {name} not found!")
+            citycode = possibable_cities[0]["city_code"]
+            if not citycode:
+                # citycode可能为空
+                raise ValueError(
+                    "抱歉，没有找到这个地区的城市编码，试试使用更精确的地址呢？（如果你给的城市名是省级行政区，请精确到某个市级行政区）"
+                )
+
+        return citycode
 
     @staticmethod
     @get_time
