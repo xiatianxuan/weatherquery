@@ -1,6 +1,6 @@
 [project]
 name = "weatherquery"
-version = "0.1.3"
+version = "0.1.4"
 description = "这是一个轻量级的快捷的天气查询Python库"
 readme = "README.md"
 authors = [
@@ -8,7 +8,9 @@ authors = [
     { name = "xiatianxuan", email = "xiatianxuan2025@163.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "portalocker>=3.2.0",
+]
 
 [build-system]
 requires = ["setuptools", "wheel"]
