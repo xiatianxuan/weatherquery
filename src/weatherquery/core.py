@@ -159,7 +159,7 @@ class Querier:
             sunrise=self._data_data["yesterday"]["sunrise"],
             sunset=self._data_data["yesterday"]["sunset"],
             aqi=self._data_data["yesterday"]["aqi"],
-            wind_direction=self._data_data["yesterday"]["fx"],  # 改为 "fx"
+            wind_direction=self._data_data["yesterday"]["fx"],
             wind_force=self._data_data["yesterday"]["fl"],
             weather_type=self._data_data["yesterday"]["type"],
             notice=self._data_data["yesterday"]["notice"],
