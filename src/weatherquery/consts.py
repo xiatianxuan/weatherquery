@@ -1,3 +1,4 @@
+# 常量
 GLOBAL_DEBUG = True  # 全局调试标志
 PRINT_TIME = True if GLOBAL_DEBUG else False  # 函数运行耗时 是否输出
 

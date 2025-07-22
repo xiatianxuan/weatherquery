@@ -6,7 +6,7 @@
 ## 安装
 通过pip命令直接安装：
 ```bash
-pip install git+https://gitee.com/xiatianxuan/weatherquery
+pip install weatherquery
 ```
 
 ## 使用
