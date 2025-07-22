@@ -5,3 +5,6 @@ wheels/
 *.spec
 .python-version
 uv.lock
+.venv/
+.idea/
+.vscode/
